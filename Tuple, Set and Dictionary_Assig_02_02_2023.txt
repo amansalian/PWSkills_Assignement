@@ -1,0 +1,145 @@
+                                         Tuple, Set and Dictionary PWSkills Assginment
+                                                                       By: Aman Salian
+                                                        
+Question 1: What are the characteristics of the tuples? Is tuple immutable?
+
+Answer: In Python, a tuple is an ordered and immutable collection of elements, which means that:
+
+Tuples are ordered: The elements of a tuple are stored in a specific order, which is maintained when the tuple is accessed or iterated over.
+
+Tuples are immutable: Once a tuple is created, it cannot be modified. You cannot add or remove elements, nor can you change the value of an existing element.
+
+Tuples can contain any type of data: Tuples can store elements of any data type, including numbers, strings, booleans, and even other tuples.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 2: What are the two tuple methods in python? Give an example of each method. Give a reason why
+tuples have only two in-built methods as compared to Lists.
+
+Answer: The two types of tuple methods are 'count()' and 'index()'
+        1. count: This method returns the number of times a specified element appears in the tuple.
+        2. index: This method returns the index of the first occurrence of a specified element in the tuple.
+        
+The reason tuples have only two built-in methods compared to lists is that tuples are immutable, so they don't need methods to add or remove elements. The limited number of methods available for tuples reflects the fact that they are intended to be used as fixed collections of data. In contrast, lists are mutable, and their methods reflect the range of operations that you can perform on them, such as adding, removing, or sorting elements.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 3: Which collection datatypes in python do not allow duplicate items? Write a code using a set to remove
+duplicates from the given list.
+List = [1, 1, 1, 2, 1, 3, 1, 4, 2, 1, 2, 2, 2, 3, 2, 4, 3, 1, 3, 2, 3, 3, 3, 4, 4, 1, 4, 2, 4, 3, 4, 4]
+
+Answer: Sets in Python is a collection datatype which does not allow duplicate items. 
+
+Code:
+lst = [1, 1, 1, 2, 1, 3, 1, 4, 2, 1, 2, 2, 2, 3, 2, 4, 3, 1, 3, 2, 3, 3, 3, 4, 4, 1, 4, 2, 4, 3, 4, 4]
+
+set_1 = set(lst)
+print(set_1)
+
+Output:
+{1,2,3,4}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 4: Explain the difference between the union() and update() methods for a set. Give an example of
+each method.
+
+Answer: In Python, union() and update() are two methods for combining sets, but they work differently:
+
+1. union() method: This method returns a new set that contains all the unique elements from two or more sets.
+
+Example:
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+set3 = set1.union(set2)
+print(set3) # Output: {1, 2, 3, 4, 5}
+
+2. update() method: This method adds the elements from one set to another set, modifying the original set.
+Example:
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+set1.update(set2)
+print(set1) # Output: {1, 2, 3, 4, 5}
+
+The main difference between these two methods is that union() returns a new set that combines the original sets without modifying them, while update() modifies the original set by adding elements from another set. 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 5: What is a dictionary? Give an example. Also, state whether a dictionary is ordered or unordered.
+
+Answer: A dictionary in Python is a collection of key-value pairs that allows you to store and retrieve data using a unique key. Each key-value pair is separated by a colon, and the pairs are separated by commas. The keys must be unique and immutable (such as strings, integers, or tuples), and the values can be any data type (such as strings, integers, lists, or other dictionaries). Dictionaries are unordered, which means that the order of the key-value pairs is not fixed and may change when the dictionary is modified. 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 6: Can we create a nested dictionary? If so, please give an example by creating a simple one-level
+nested dictionary.
+
+Answer: Yes, we can create a nested dictionary in Python. A nested dictionary is a dictionary where the values are also dictionaries.
+
+Example:
+
+person = {
+    "name": "Aman",
+    "age": 22,
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+    }
+}
+
+We can access the nested dictionary by using the key "address", followed by the key for the specific piece of information we want. For example, to get the person's city, we can use:
+
+Output:
+>>> person["address"]["city"]
+'Anytown'
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 7: Using setdefault() method, create key named topics in the given dictionary and also add the value of
+the key as this list ['Python', 'Machine Learning’, 'Deep Learning']
+
+Answer: 
+# Code
+dict1 = {'language': 'Python', 'course': 'Data Science Masters'}
+dict1.setdefault('topics', [])
+dict1['topics'] += ['Python', 'Machine Learning', 'Deep Learning']
+print(dict1)
+
+Output:
+{'language': 'Python', 'course': 'Data Science Masters', 'topics': ['Python', 'Machine Learning', 'Deep Learning']}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Question 8: What are the three view objects in dictionaries? Use the three in-built methods in python to display
+these three view objects for the given dictionary.
+dict1 = {'Sport': 'Cricket' , 'Teams': ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand']}
+
+Answer: In Python, there are three types of view objects that can be used to access the keys, values, and key-value pairs in a dictionary. These are:
+
+1. dict_keys: This view object contains the keys of the dictionary.
+
+2. dict_values: This view object contains the values of the dictionary.
+
+3. dict_items: This view object contains the key-value pairs of the dictionary.
+
+Code:
+dict1 = {'Sport': 'Cricket', 'Teams': ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand']}
+
+keys_view = dict1.keys()
+
+values_view = dict1.values()
+
+items_view = dict1.items()
+
+print("Keys view:", keys_view)
+print("Values view:", values_view)
+print("Items view:", items_view)
+
+Output:
+Keys view: dict_keys(['Sport', 'Teams'])
+Values view: dict_values(['Cricket', ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand']])
+Items view: dict_items([('Sport', 'Cricket'), ('Teams', ['India', 'Australia', 'England', 'South Africa', 'Sri Lanka', 'New Zealand'])])
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
